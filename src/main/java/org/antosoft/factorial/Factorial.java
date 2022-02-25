@@ -1,5 +1,10 @@
 package org.antosoft.factorial;
 
+/**
+ *  Class providing a method that computes the factorial of an integer number
+ *
+ * @author Antonio V
+ */
 public class Factorial {
 
 

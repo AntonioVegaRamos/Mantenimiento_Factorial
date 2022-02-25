@@ -1,6 +1,6 @@
 package org.antosoft.factorial;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,9 +16,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FactorialTest {
 
+    private Factorial factorial;
+
+    @BeforeEach
+    public void setUp(){
+        factorial = new Factorial();
+    }
+
+    @AfterEach
+    public void finish(){
+        factorial = null;
+    }
+
     @Test
     public void shouldComputeReturnOneIfTheNumberIsZero() {
-        var factorial = new Factorial();
         int expectedValue = 1;
         int obtainedValue  = factorial.compute(0);
 
@@ -27,7 +38,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnOneIfTheNumberIsOne() {
-        var factorial = new Factorial();
         int expectedValue = 1;
         int obtainedValue  = factorial.compute(1);
 
@@ -36,7 +46,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnOneIfTheNumberIsTwo() {
-        var factorial = new Factorial();
         int expectedValue = 2;
         int obtainedValue  = factorial.compute(2);
 
@@ -45,7 +54,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnSixIfTheNumberIsThree() {
-        var factorial = new Factorial();
         int expectedValue = 6;
         int obtainedValue  = factorial.compute(3);
 
@@ -54,7 +62,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeOfANegativeNumberRaiseAnException() {
-        var factorial = new Factorial();
         assertThrows(IllegalArgumentException.class,() ->factorial.compute(-1));
     }
 
