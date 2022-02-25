@@ -18,7 +18,7 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnOneIfTheNumberIsZero() {
-        Factorial factorial = new Factorial();
+        var factorial = new Factorial();
         int expectedValue = 1;
         int obtainedValue  = factorial.compute(0);
 
@@ -27,7 +27,7 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnOneIfTheNumberIsOne() {
-        Factorial factorial = new Factorial();
+        var factorial = new Factorial();
         int expectedValue = 1;
         int obtainedValue  = factorial.compute(1);
 
@@ -36,11 +36,26 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnOneIfTheNumberIsTwo() {
-        Factorial factorial = new Factorial();
+        var factorial = new Factorial();
         int expectedValue = 2;
         int obtainedValue  = factorial.compute(2);
 
         assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
+    public void shouldComputeReturnSixIfTheNumberIsThree() {
+        var factorial = new Factorial();
+        int expectedValue = 6;
+        int obtainedValue  = factorial.compute(3);
+
+        assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
+    public void shouldComputeOfANegativeNumberRaiseAnException() {
+        var factorial = new Factorial();
+        assertThrows(IllegalArgumentException.class,() ->factorial.compute(-1));
     }
 
 
