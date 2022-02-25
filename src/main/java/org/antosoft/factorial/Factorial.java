@@ -4,14 +4,14 @@ public class Factorial {
 
 
     public int compute(int value) {
-        int result;
+        int result = 1;
 
         if(value < 0)
             throw new IllegalArgumentException("Error: negative number --> " + value);
-        else if((value == 0) || (value == 1))
-            result = 1;
-        else
-            result = value * compute(--value);
+
+        //Just compute for values > 0
+        for (int i = value; i > 1; --i)
+            result *= i;
 
          return result;
     }
